@@ -37,7 +37,7 @@ nmap({
   { '<Leader>ff', cmd('Telescope find_files'), opts(noremap) },
   { '<Leader>fg', cmd('Telescope grep_string'), opts(noremmap) },
   -- comment
-  { '<C-/>', cmd('CommentToggle'), opts(noremap, silent) },
+  { '<A-/>', cmd('CommentToggle'), opts(noremap, silent) },
   -- reload vim
   { '<Leader>rr', ':source $MYVIMRC', opts(noremap) },
   -- lazygit
