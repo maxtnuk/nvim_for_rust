@@ -11,8 +11,14 @@ plugin({
   config = conf.telescope,
   requires = {
     { 'nvim-lua/plenary.nvim', opt = true },
-    { 'nvim-telescope/telescope-fzy-native.nvim', opt = true },
+    { 'nvim-telescope/telescope-fzf-native.nvim', opt = true },
   },
+  after = 'telescope-fzf-native',
+})
+
+plugin({
+  'nvim-telescope/telescope-fzf-native.nvim',
+  run = 'make',
 })
 
 plugin({

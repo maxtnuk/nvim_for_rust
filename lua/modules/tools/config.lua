@@ -7,7 +7,7 @@ local config = {}
 function config.telescope()
   if not packer_plugins['plenary.nvim'].loaded then
     vim.cmd([[packadd plenary.nvim]])
-    vim.cmd([[packadd telescope-fzy-native.nvim]])
+    vim.cmd([[packadd telescope-fzf-native.nvim]])
   end
   require('telescope').setup({
     defaults = {
@@ -27,7 +27,7 @@ function config.telescope()
       },
     },
   })
-  require('telescope').load_extension('fzy_native')
+  require('telescope').load_extension('fzf')
 end
 
 function config.toggleterm()
