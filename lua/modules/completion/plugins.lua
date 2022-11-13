@@ -26,3 +26,7 @@ plugin({
 })
 
 plugin({ 'L3MON4D3/LuaSnip', event = 'InsertCharPre', config = conf.lua_snip })
+
+plugin({ 'windwp/nvim-autopairs', event = 'InsertEnter', config = conf.auto_pairs })
+
+plugin({ 'terrortylor/nvim-comment', config = conf.nvim_comment })

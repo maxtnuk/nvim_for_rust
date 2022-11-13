@@ -14,3 +14,32 @@ plugin({
     { 'nvim-telescope/telescope-fzy-native.nvim', opt = true },
   },
 })
+
+plugin({
+  'romgrk/barbar.nvim',
+  requires = {'kyazdani42/nvim-web-devicons'} 
+})
+
+plugin({
+  "akinsho/toggleterm.nvim", 
+  tag = '*',
+  config = conf.toggleterm
+})
+
+plugin({
+  'sychen52/smart-term-esc.nvim',
+  config = conf.smart_term_esc,
+})
+
+plugin({
+  'ellisonleao/dotenv.nvim',
+  config = function()
+    require('dotenv').setup({
+      enable_on_load = false,
+    })
+  end
+})
+
+plugin({
+  'kdheepak/lazygit.nvim'
+})

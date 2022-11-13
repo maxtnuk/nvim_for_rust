@@ -33,6 +33,7 @@ if vim.fn.executable('rg') == 1 then
   opt.grepprg = 'rg --vimgrep --no-heading --smart-case'
 end
 
+opt.mouse = opt.mouse + 'a'
 opt.completeopt = 'menu,menuone,noselect'
 opt.showmode = false
 opt.shortmess = 'aoOTIcF'
@@ -43,7 +44,7 @@ opt.showtabline = 0
 opt.winwidth = 30
 opt.pumheight = 15
 opt.showcmd = false
-opt.cmdheight = 0
+opt.cmdheight = 1
 opt.laststatus = 3
 opt.list = true
 opt.listchars = 'tab:»·,nbsp:+,trail:·,extends:→,precedes:←'
@@ -54,8 +55,12 @@ opt.undofile = true
 opt.smarttab = true
 opt.expandtab = true
 opt.autoindent = true
+opt.autoread= true
 opt.tabstop = 2
 opt.shiftwidth = 2
+
+-- cursorline hightlight
+opt.cursorline = true
 
 -- wrap
 opt.linebreak = true
@@ -73,6 +78,11 @@ opt.textwidth = 100
 opt.colorcolumn = '100'
 -- opt.conceallevel = 2
 -- opt.concealcursor = 'niv'
+
+vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGained" }, {
+	command = "if mode() != 'c' | checktime | endif",
+	pattern = { "*" },
+})
 
 if vim.loop.os_uname().sysname == 'Darwin' then
   vim.g.clipboard = {

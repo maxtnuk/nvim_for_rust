@@ -13,4 +13,37 @@ plugin({
   config = conf.nvim_treesitter,
 })
 
-plugin({ 'nvim-treesitter/nvim-treesitter-textobjects', after = 'nvim-treesitter' })
+plugin({
+  'p00f/nvim-ts-rainbow', after = 'nvim-treesitter'
+})
+
+-- plugin({ 'nvim-treesitter/nvim-treesitter-textobjects', after = 'nvim-treesitter' })
+
+plugin({
+  'williamboman/mason.nvim',
+  config = conf.mason
+})
+
+plugin({
+  'williamboman/mason-lspconfig.nvim',
+  config = conf.mason_lspconfig,
+  after = 'nvim-lspconfig'
+})
+
+plugin({
+ 'simrat39/rust-tools.nvim', 
+  config = conf.rust_tools,
+  after = 'nvim-lspconfig'
+})
+plugin({
+  'nvim-lua/plenary.nvim'
+})
+plugin({
+  'mfussenegger/nvim-dap'
+})
+
+plugin({
+  'rcarriga/nvim-dap-ui',
+  requires={'mfussenegger/nvim-dap'}
+})
+

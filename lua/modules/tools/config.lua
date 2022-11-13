@@ -30,4 +30,15 @@ function config.telescope()
   require('telescope').load_extension('fzy_native')
 end
 
+function config.toggleterm()
+  require('toggleterm').setup()
+end
+
+function config.smart_term_esc()
+  require('smart-term-esc').setup{
+    key='<Esc>',
+    except={'fzf'}
+  }
+end
+
 return config
