@@ -17,13 +17,13 @@ plugin({
 
 plugin({
   'romgrk/barbar.nvim',
-  requires = {'kyazdani42/nvim-web-devicons'} 
+  requires = { 'kyazdani42/nvim-web-devicons' },
 })
 
 plugin({
-  "akinsho/toggleterm.nvim", 
+  'akinsho/toggleterm.nvim',
   tag = '*',
-  config = conf.toggleterm
+  config = conf.toggleterm,
 })
 
 plugin({
@@ -37,9 +37,9 @@ plugin({
     require('dotenv').setup({
       enable_on_load = false,
     })
-  end
+  end,
 })
 
 plugin({
-  'kdheepak/lazygit.nvim'
+  'kdheepak/lazygit.nvim',
 })

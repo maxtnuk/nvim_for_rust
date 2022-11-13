@@ -9,7 +9,7 @@ function config.nvim_lsp() end
 
 function config.nvim_cmp()
   local cmp = require('cmp')
-  
+
   cmp.setup({
     preselect = cmp.PreselectMode.Item,
     window = {
@@ -62,7 +62,7 @@ function config.lua_snip()
 end
 
 function config.auto_pairs()
-  require("nvim-autopairs").setup({})
+  require('nvim-autopairs').setup({})
 end
 
 function config.nvim_comment()

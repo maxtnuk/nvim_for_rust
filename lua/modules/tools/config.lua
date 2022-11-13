@@ -35,10 +35,10 @@ function config.toggleterm()
 end
 
 function config.smart_term_esc()
-  require('smart-term-esc').setup{
-    key='<Esc>',
-    except={'fzf'}
-  }
+  require('smart-term-esc').setup({
+    key = '<Esc>',
+    except = { 'fzf' },
+  })
 end
 
 return config

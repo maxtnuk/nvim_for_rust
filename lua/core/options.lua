@@ -55,7 +55,7 @@ opt.undofile = true
 opt.smarttab = true
 opt.expandtab = true
 opt.autoindent = true
-opt.autoread= true
+opt.autoread = true
 opt.tabstop = 2
 opt.shiftwidth = 2
 
@@ -79,9 +79,9 @@ opt.colorcolumn = '100'
 -- opt.conceallevel = 2
 -- opt.concealcursor = 'niv'
 
-vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGained" }, {
-	command = "if mode() != 'c' | checktime | endif",
-	pattern = { "*" },
+vim.api.nvim_create_autocmd({ 'BufEnter', 'CursorHold', 'CursorHoldI', 'FocusGained' }, {
+  command = "if mode() != 'c' | checktime | endif",
+  pattern = { '*' },
 })
 
 if vim.loop.os_uname().sysname == 'Darwin' then
