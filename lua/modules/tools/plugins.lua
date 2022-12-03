@@ -65,6 +65,8 @@ plugin({
   'kdheepak/lazygit.nvim',
 })
 
+plugin({ 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' })
+
 plugin({
   'rbong/vim-flog',
   requires = { 'tpope/vim-fugitive' },

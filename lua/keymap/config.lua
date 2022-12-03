@@ -35,17 +35,17 @@ nmap({
   { '<F1>', cmd('NvimTreeToggle'), opts(noremap) },
   -- find files
   { '<Leader>ff', cmd('Telescope find_files'), opts(noremap) },
-  { '<Leader>fg', cmd('Telescope grep_string'), opts(noremap) },
   -- spectre
   { '<Leader>S', cmd('lua require("spectre").open()'), opts(noremap) },
   { '<Leader>sw', cmd('lua require("spectre").open_visual({select_word=true})'), opts(noremap) },
   { '<Leader>sp', cmd('lua require("spectre").open_file_search()'), opts(noremap) },
   -- comment
   { '<A-/>', cmd('CommentToggle'), opts(noremap, silent) },
-  -- reload vim
-  { '<Leader>rr', ':source $MYVIMRC', opts(noremap) },
-  -- lazygit
-  { '<Leader>gg', cmd('LazyGit'), opts(noremap, silent) },
+  -- diff view
+  { '<Leader>fh', cmd('DiffviewFileHistory %'), opts(noremap, silent) },
+  { '<Leader>gv', cmd('Flog'), opts(noremap, silent) },
+  { '<Leader>gg', cmd('DiffviewOpen'), opts(noremap, silent) },
+  { '<Leader>gc', cmd('DiffviewClose'), opts(noremap, silent) },
   -- terminal
   { 'tt', cmd('ToggleTerm size=70 direction="vertical" shell="bash" '), opts(noremap, silent) },
   -- buffer jump
