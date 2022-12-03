@@ -35,7 +35,7 @@ nmap({
   { '<F1>', cmd('NvimTreeToggle'), opts(noremap) },
   -- find files
   { '<Leader>ff', cmd('Telescope find_files'), opts(noremap) },
-  { '<Leader>fg', cmd('Telescope grep_string'), opts(noremmap) },
+  { '<Leader>fg', cmd('Telescope grep_string'), opts(noremap) },
   -- spectre
   { '<Leader>S', cmd('lua require("spectre").open()'), opts(noremap) },
   { '<Leader>sw', cmd('lua require("spectre").open_visual({select_word=true})'), opts(noremap) },
@@ -60,6 +60,8 @@ nmap({
   { '<A-Down>', '<C-w>j', opts(noremap) },
   { '<A-Up>', '<C-w>k', opts(noremap) },
   { '<A-q>', '<C-w>q', opts(noremap) },
+  -- recent file
+  { '<Leader><Leader>', cmd('lua require("telescope").extensions.recent_files.pick()'), opts(noremap, silent) },
 })
 
 -- barbar keymap

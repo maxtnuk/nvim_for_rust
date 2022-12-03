@@ -22,6 +22,17 @@ plugin({
 })
 
 plugin({
+  'smartpde/telescope-recent-files',
+  config = function()
+    require('telescope').load_extension('recent_files')
+  end,
+  after = 'telescope.nvim',
+  requires = {
+    'nvim-telescope/telescope.nvim',
+  },
+})
+
+plugin({
   'romgrk/barbar.nvim',
   requires = { 'kyazdani42/nvim-web-devicons' },
 })

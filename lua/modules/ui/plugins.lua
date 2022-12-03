@@ -7,6 +7,19 @@ local conf = require('modules.ui.config')
 
 plugin({ 'glepnir/zephyr-nvim', config = conf.zephyr })
 
+plugin({
+  'melkster/modicator.nvim',
+  setup = function()
+    -- These are required for Modicator to work
+    vim.o.cursorline = true
+    vim.o.number = true
+    vim.o.termguicolors = true
+  end,
+  config = function()
+    require('modicator').setup()
+  end,
+})
+
 plugin({ 'glepnir/dashboard-nvim', config = conf.dashboard })
 
 plugin({
