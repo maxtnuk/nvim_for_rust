@@ -21,7 +21,7 @@ xmap({ ',', '', opts(noremap) })
 tmap({
   { '<Esc>', '<C-\\><C-n>', opts(noremap) },
 })
-
+-- hlle
 -- usage example
 nmap({
   -- noremal remap
@@ -36,6 +36,10 @@ nmap({
   -- find files
   { '<Leader>ff', cmd('Telescope find_files'), opts(noremap) },
   { '<Leader>fg', cmd('Telescope grep_string'), opts(noremmap) },
+  -- spectre
+  { '<Leader>S', cmd('lua require("spectre").open()'), opts(noremap) },
+  { '<Leader>sw', cmd('lua require("spectre").open_visual({select_word=true})'), opts(noremap) },
+  { '<Leader>sp', cmd('lua require("spectre").open_file_search()'), opts(noremap) },
   -- comment
   { '<A-/>', cmd('CommentToggle'), opts(noremap, silent) },
   -- reload vim
@@ -47,18 +51,16 @@ nmap({
   -- buffer jump
   { ']b', cmd('bn'), opts(noremap) },
   { '[b', cmd('bp'), opts(noremap) },
+  { '<Leader>sc', cmd('set spell!'), opts(noremap, silent) },
   -- remove trailing white space
   { '<Leader>t', cmd('TrimTrailingWhitespace'), opts(noremap) },
   -- window jump
-  { '<C-h>', '<C-w>h', opts(noremap) },
-  { '<C-l>', '<C-w>l', opts(noremap) },
-  { '<C-j>', '<C-w>j', opts(noremap) },
-  { '<C-k>', '<C-w>k', opts(noremap) },
+  { '<A-Left>', '<C-w>h', opts(noremap) },
+  { '<A-Right>', '<C-w>l', opts(noremap) },
+  { '<A-Down>', '<C-w>j', opts(noremap) },
+  { '<A-Up>', '<C-w>k', opts(noremap) },
+  { '<A-q>', '<C-w>q', opts(noremap) },
 })
-
--- vmap({
---  { '<C-/>', cmd('CommentToggle'), opts(noremap, silent) },
--- })
 
 -- barbar keymap
 nmap({
@@ -85,12 +87,6 @@ nmap({
   { 'gr', cmd('lua vim.lsp.buf.references()'), opts(noremap, silent) },
   { 'g0', cmd('lua vim.lsp.buf.document_symbol()'), opts(noremap, silent) },
   { 'gw', cmd('lua vim.lsp.buf.workspace_symbol()'), opts(noremap, silent) },
-})
-
-imap({
-  -- insert mode
-  { '<C-h>', '<Bs>', opts(noremap) },
-  { '<C-e>', '<End>', opts(noremap) },
 })
 
 -- commandline remap

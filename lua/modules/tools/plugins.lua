@@ -47,5 +47,14 @@ plugin({
 })
 
 plugin({
+  'windwp/nvim-spectre',
+})
+
+plugin({
   'kdheepak/lazygit.nvim',
+})
+
+plugin({
+  'rbong/vim-flog',
+  requires = { 'tpope/vim-fugitive' },
 })

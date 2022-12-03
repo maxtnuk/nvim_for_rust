@@ -33,7 +33,7 @@ if vim.fn.executable('rg') == 1 then
   opt.grepprg = 'rg --vimgrep --no-heading --smart-case'
 end
 
-opt.mouse = opt.mouse + 'a'
+opt.mouse = opt.mouse + 'i'
 opt.completeopt = 'menu,menuone,noselect'
 opt.showmode = false
 opt.shortmess = 'aoOTIcF'
