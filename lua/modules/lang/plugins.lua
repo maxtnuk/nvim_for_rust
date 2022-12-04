@@ -8,7 +8,10 @@ local conf = require('modules.lang.config')
 plugin({
   'nvim-treesitter/nvim-treesitter',
   event = 'BufRead',
-  run = ':TSUpdate',
+  run = function()
+    local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+    ts_update()
+  end,
   after = 'telescope.nvim',
   config = conf.nvim_treesitter,
 })
@@ -18,7 +21,7 @@ plugin({
   after = 'nvim-treesitter',
 })
 
--- plugin({ 'nvim-treesitter/nvim-treesitter-textobjects', after = 'nvim-treesitter' })
+--plugin({ 'nvim-treesitter/nvim-treesitter-textobjects', after = 'nvim-treesitter' })
 
 plugin({
   'williamboman/mason.nvim',

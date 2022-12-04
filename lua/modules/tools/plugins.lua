@@ -11,25 +11,21 @@ plugin({
   config = conf.telescope,
   requires = {
     { 'nvim-lua/plenary.nvim', opt = true },
-    { 'nvim-telescope/telescope-fzf-native.nvim', opt = true },
+    { 'nvim-telescope/telescope-fzf-native.nvim' },
+    { 'smartpde/telescope-recent-files' },
   },
 })
 
 plugin({
   'nvim-telescope/telescope-fzf-native.nvim',
   run = 'make',
-  requires = { 'nvim-telescope/telescope.nvim' },
+  -- requires = { 'nvim-telescope/telescope.nvim' },
 })
 
 plugin({
   'smartpde/telescope-recent-files',
-  config = function()
-    require('telescope').load_extension('recent_files')
-  end,
-  after = 'telescope.nvim',
-  requires = {
-    'nvim-telescope/telescope.nvim',
-  },
+  -- after = 'telescope.nvim',
+  -- requires = { 'nvim-telescope/telescope.nvim' },
 })
 
 plugin({
