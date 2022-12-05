@@ -35,10 +35,22 @@ end
 function config.mason_lspconf()
   require('mason-lspconfig').setup()
 end
+function config.dap()
+  local dap, dapui = require('dap'), require('dapui')
+  dap.listeners.after.event_initialized['dapui_config'] = function()
+    dapui.open()
+  end
+  dap.listeners.before.event_terminated['dapui_config'] = function()
+    dapui.close()
+  end
+  dap.listeners.before.event_exited['dapui_config'] = function()
+    dapui.close()
+  end
+end
 
 function config.rust_tools()
   local mason_path = vim.env.HOME .. '/.local/share/nvim/mason/'
-  local codelldb_path = mason_path .. 'packages/cocelldb/extension/adapter/codelldb'
+  local codelldb_path = mason_path .. 'packages/codelldb/extension/adapter/codelldb'
   local liblldb_path = mason_path .. 'packages/codelldb/extension/lldb/lib/liblldb.so'
   require('rust-tools').setup({
     tools = { -- rust-tools options

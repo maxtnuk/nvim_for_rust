@@ -44,9 +44,13 @@ plugin({
 })
 plugin({
   'mfussenegger/nvim-dap',
+  config = conf.dap,
 })
 
 plugin({
   'rcarriga/nvim-dap-ui',
+  config = function()
+    require('dapui').setup()
+  end,
   requires = { 'mfussenegger/nvim-dap' },
 })

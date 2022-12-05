@@ -89,6 +89,13 @@ nmap({
   { 'gr', cmd('lua vim.lsp.buf.references()'), opts(noremap, silent) },
   { 'g0', cmd('lua vim.lsp.buf.document_symbol()'), opts(noremap, silent) },
   { 'gw', cmd('lua vim.lsp.buf.workspace_symbol()'), opts(noremap, silent) },
+  -- debug
+  { '<Leader>bb', cmd('lua require"dap".toggle_breakpoint()'), opts(noremap, silent) },
+  { '<F9>', cmd('lua require"dap".step_into()'), opts(noremap, silent) },
+  { '<F8>', cmd('lua require"dap".step_over()'), opts(noremap, silent) },
+  { '<F10>', cmd('lua require"dap".step_out()'), opts(noremap, silent) },
+  { '<F5>', cmd('lua require"dap".continue()'), opts(noremap, silent) },
+  { '<Leader>dd', cmd('lua require"dapui".toggle()'), opts(noremap, silent) },
 })
 
 -- commandline remap

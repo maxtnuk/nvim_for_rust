@@ -73,7 +73,24 @@ plugin({
 })
 
 plugin({
-  'MunifTanjim/nui.nvim',
+  'anuvyklack/windows.nvim',
+  requires = {
+    'anuvyklack/middleclass',
+    'anuvyklack/animation.nvim',
+  },
+  config = function()
+    vim.o.winwidth = 10
+    vim.o.winminwidth = 10
+    vim.o.equalalways = false
+    require('windows').setup()
+  end,
+})
+
+plugin({
+  'karb94/neoscroll.nvim',
+  config = function()
+    require('neoscroll').setup()
+  end,
 })
 
 plugin({ 'akinsho/nvim-bufferline.lua', config = conf.nvim_bufferline, requires = 'kyazdani42/nvim-web-devicons' })
