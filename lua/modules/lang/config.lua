@@ -155,7 +155,7 @@ function config.rust_tools()
         -- https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/generated_config.adoc
         ['rust-analyzer'] = {
           checkOnSave = {
-            enable = true,
+            enable = false,
           },
           inlayHints = {
             lifetimeElisionHints = {
