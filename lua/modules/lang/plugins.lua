@@ -42,6 +42,16 @@ plugin({
 plugin({
   'nvim-lua/plenary.nvim',
 })
+
+plugin({
+  'saecki/crates.nvim',
+  tag = 'v0.3.0',
+  requires = { 'nvim-lua/plenary.nvim' },
+  config = function()
+    require('crates').setup()
+  end,
+})
+
 plugin({
   'mfussenegger/nvim-dap',
   config = conf.dap,

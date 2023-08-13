@@ -35,6 +35,7 @@ function config.nvim_cmp()
       { name = 'luasnip' },
       { name = 'path' },
       { name = 'buffer' },
+      { name = 'crates' },
     },
   })
 end

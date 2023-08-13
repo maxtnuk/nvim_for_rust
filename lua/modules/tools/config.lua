@@ -32,7 +32,9 @@ function config.telescope()
 end
 
 function config.toggleterm()
-  require('toggleterm').setup()
+  require('toggleterm').setup({
+    shell = 'bash',
+  })
 end
 
 function config.smart_term_esc()
