@@ -20,7 +20,12 @@ plugin({
   end,
 })
 
-plugin({ 'glepnir/dashboard-nvim', config = conf.dashboard })
+plugin({
+  'glepnir/dashboard-nvim',
+  event = 'VimEnter',
+  config = conf.dashboard,
+  requires = { 'nvim-tree/nvim-web-devicons' },
+})
 
 plugin({
   'glepnir/galaxyline.nvim',

@@ -54,6 +54,16 @@ plugin({
 })
 
 plugin({
+  'tanvirtin/vgit.nvim',
+  config = function()
+    require('vgit').setup()
+  end,
+  requires = {
+    'nvim-lua/plenary.nvim',
+  },
+})
+
+plugin({
   'windwp/nvim-spectre',
 })
 
