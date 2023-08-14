@@ -21,9 +21,10 @@ plugin({
 })
 
 plugin({
-  'glepnir/dashboard-nvim',
-  event = 'VimEnter',
-  config = conf.dashboard,
+  'goolord/alpha-nvim',
+  config = function()
+    require('alpha').setup(require('alpha.themes.startify').config)
+  end,
   requires = { 'nvim-tree/nvim-web-devicons' },
 })
 
