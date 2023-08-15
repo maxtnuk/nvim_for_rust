@@ -32,8 +32,6 @@ nmap({
   { 'Y', 'y$', opts(noremap) },
   -- toggle tree
   { '<F1>', cmd('NvimTreeToggle'), opts(noremap) },
-  -- find files
-  { '<Leader>ff', cmd('Telescope find_files'), opts(noremap) },
   -- spectre
   { '<Leader>S', cmd('lua require("spectre").open()'), opts(noremap) },
   { '<Leader>sw', cmd('lua require("spectre").open_visual({select_word=true})'), opts(noremap) },
@@ -41,8 +39,8 @@ nmap({
   -- comment
   { '<A-/>', cmd('CommentToggle'), opts(noremap, silent) },
   -- diff view
-  { '<Leader>fh', cmd('DiffviewFileHistory %'), opts(noremap, silent) },
-  { '<Leader>fg', cmd('Flog'), opts(noremap, silent) },
+  { '<Leader>dh', cmd('DiffviewFileHistory %'), opts(noremap, silent) },
+  { '<Leader>fl', cmd('Flog'), opts(noremap, silent) },
   { '<Leader>dd', cmd('DiffviewOpen'), opts(noremap, silent) },
   { '<Leader>dc', cmd('DiffviewClose'), opts(noremap, silent) },
   -- terminal
@@ -59,7 +57,14 @@ nmap({
   { '<A-Down>', '<C-w>j', opts(noremap) },
   { '<A-Up>', '<C-w>k', opts(noremap) },
   { '<A-q>', '<C-w>q', opts(noremap) },
-  -- recent file
+})
+
+-- Telescope
+nmap({
+  { '<Leader>ff', cmd('Telescope find_files'), opts(noremap) },
+  { '<Leader>fg', cmd('Telescope live_grep'), opts(noremap) },
+  { '<Leader>fb', cmd('Telescope buffers'), opts(noremap) },
+  { '<Leader>fh', cmd('Telescope help_tags'), opts(noremap) },
   { '<Leader><Leader>', cmd('lua require("telescope").extensions.recent_files.pick()'), opts(noremap, silent) },
 })
 
