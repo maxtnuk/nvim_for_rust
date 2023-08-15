@@ -41,7 +41,7 @@ nmap({
   -- diff view
   { '<Leader>dh', cmd('DiffviewFileHistory %'), opts(noremap, silent) },
   { '<Leader>fl', cmd('Flog'), opts(noremap, silent) },
-  { '<Leader>dd', cmd('DiffviewOpen'), opts(noremap, silent) },
+  { '<Leader>do', cmd('DiffviewOpen'), opts(noremap, silent) },
   { '<Leader>dc', cmd('DiffviewClose'), opts(noremap, silent) },
   -- terminal
   { 'tt', cmd('ToggleTerm size=70 direction="vertical" shell="bash" '), opts(noremap, silent) },
