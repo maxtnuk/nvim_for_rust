@@ -21,8 +21,7 @@ xmap({ ',', '', opts(noremap) })
 tmap({
   { '<Esc>', '<C-\\><C-n>', opts(noremap) },
 })
--- hlle
--- usage example
+
 nmap({
   -- noremal remap
   -- close buffer
@@ -43,9 +42,9 @@ nmap({
   { '<A-/>', cmd('CommentToggle'), opts(noremap, silent) },
   -- diff view
   { '<Leader>fh', cmd('DiffviewFileHistory %'), opts(noremap, silent) },
-  { '<Leader>gv', cmd('Flog'), opts(noremap, silent) },
-  { '<Leader>gg', cmd('DiffviewOpen'), opts(noremap, silent) },
-  { '<Leader>gc', cmd('DiffviewClose'), opts(noremap, silent) },
+  { '<Leader>fg', cmd('Flog'), opts(noremap, silent) },
+  { '<Leader>dd', cmd('DiffviewOpen'), opts(noremap, silent) },
+  { '<Leader>dc', cmd('DiffviewClose'), opts(noremap, silent) },
   -- terminal
   { 'tt', cmd('ToggleTerm size=70 direction="vertical" shell="bash" '), opts(noremap, silent) },
   -- buffer jump
@@ -62,6 +61,25 @@ nmap({
   { '<A-q>', '<C-w>q', opts(noremap) },
   -- recent file
   { '<Leader><Leader>', cmd('lua require("telescope").extensions.recent_files.pick()'), opts(noremap, silent) },
+})
+
+-- vgit setting
+nmap({
+  { '<C-k>', cmd("lua require('vgit').hunk_up()"), opts(noremap) },
+  { '<C-j>', cmd("lua require('vgit').hunk_down()"), opts(noremap) },
+  { '<Leader>gs', cmd("lua require('vgit').buffer_hunk_stage()"), opts(noremap) },
+  { '<Leader>gr', cmd("lua require('vgit').buffer_hunk_reset()"), opts(noremap) },
+  { '<Leader>gp', cmd("lua require('vgit').buffer_hunk_preview()"), opts(noremap) },
+  { '<Leader>gb', cmd("lua require('vgit').buffer_blame_preview()"), opts(noremap) },
+  { '<Leader>gf', cmd("lua require('vgit').buffer_diff_preview()"), opts(noremap) },
+  { '<Leader>gh', cmd("lua require('vgit').buffer_history_preview()"), opts(noremap) },
+  { '<Leader>gu', cmd("lua require('vgit').buffer_reset()"), opts(noremap) },
+  { '<Leader>gg', cmd("lua require('vgit').buffer_gutter_blame_preview()"), opts(noremap) },
+  { '<Leader>glu', cmd("lua require('vgit').buffer_hunks_preview()"), opts(noremap) },
+  { '<Leader>gls', cmd("lua require('vgit').project_hunks_staged_preview()"), opts(noremap) },
+  { '<Leader>gd', cmd("lua require('vgit').project_diff_preview()"), opts(noremap) },
+  { '<Leader>gq', cmd("lua require('vgit').project_hunks_qf()"), opts(noremap) },
+  { '<Leader>gx', cmd("lua require('vgit').toggle_diff_preference()"), opts(noremap) },
 })
 
 -- barbar keymap
