@@ -25,100 +25,100 @@ tmap({
 nmap({
   -- noremal remap
   -- close buffer
-  { '<C-x>k', cmd('bdelete'), opts(noremap, silent) },
+  { '<C-x>k',     cmd('bdelete'),                                                opts(noremap, silent) },
   -- save
-  { '<C-s>', cmd('write'), opts(noremap) },
+  { '<C-s>',      cmd('write'),                                                  opts(noremap) },
   -- yank
-  { 'Y', 'y$', opts(noremap) },
+  { 'Y',          'y$',                                                          opts(noremap) },
   -- toggle tree
-  { '<F1>', cmd('NvimTreeToggle'), opts(noremap) },
+  { '<F2>',       cmd('NvimTreeToggle'),                                         opts(noremap) },
   -- spectre
-  { '<Leader>S', cmd('lua require("spectre").open()'), opts(noremap) },
+  { '<Leader>S',  cmd('lua require("spectre").open()'),                          opts(noremap) },
   { '<Leader>sw', cmd('lua require("spectre").open_visual({select_word=true})'), opts(noremap) },
-  { '<Leader>sp', cmd('lua require("spectre").open_file_search()'), opts(noremap) },
+  { '<Leader>sp', cmd('lua require("spectre").open_file_search()'),              opts(noremap) },
   -- comment
-  { '<A-/>', cmd('CommentToggle'), opts(noremap, silent) },
+  { '<A-/>',      cmd('CommentToggle'),                                          opts(noremap, silent) },
   -- diff view
-  { '<Leader>dh', cmd('DiffviewFileHistory %'), opts(noremap, silent) },
-  { '<Leader>fl', cmd('Flog'), opts(noremap, silent) },
-  { '<Leader>do', cmd('DiffviewOpen'), opts(noremap, silent) },
-  { '<Leader>dc', cmd('DiffviewClose'), opts(noremap, silent) },
+  { '<Leader>dh', cmd('DiffviewFileHistory %'),                                  opts(noremap, silent) },
+  { '<Leader>fl', cmd('Flog'),                                                   opts(noremap, silent) },
+  { '<Leader>do', cmd('DiffviewOpen'),                                           opts(noremap, silent) },
+  { '<Leader>dc', cmd('DiffviewClose'),                                          opts(noremap, silent) },
   -- terminal
-  { 'tt', cmd('ToggleTerm size=70 direction="vertical" shell="bash" '), opts(noremap, silent) },
+  { 'tt',         cmd('ToggleTerm size=70 direction="vertical" shell="bash" '),  opts(noremap, silent) },
   -- buffer jump
-  { ']b', cmd('bn'), opts(noremap) },
-  { '[b', cmd('bp'), opts(noremap) },
-  { '<Leader>sc', cmd('set spell!'), opts(noremap, silent) },
+  { ']b',         cmd('bn'),                                                     opts(noremap) },
+  { '[b',         cmd('bp'),                                                     opts(noremap) },
+  { '<Leader>sc', cmd('set spell!'),                                             opts(noremap, silent) },
   -- remove trailing white space
-  { '<Leader>t', cmd('TrimTrailingWhitespace'), opts(noremap) },
+  { '<Leader>t',  cmd('TrimTrailingWhitespace'),                                 opts(noremap) },
   -- window jump
-  { '<A-Left>', '<C-w>h', opts(noremap) },
-  { '<A-Right>', '<C-w>l', opts(noremap) },
-  { '<A-Down>', '<C-w>j', opts(noremap) },
-  { '<A-Up>', '<C-w>k', opts(noremap) },
-  { '<A-q>', '<C-w>q', opts(noremap) },
+  { '<A-Left>',   '<C-w>h',                                                      opts(noremap) },
+  { '<A-Right>',  '<C-w>l',                                                      opts(noremap) },
+  { '<A-Down>',   '<C-w>j',                                                      opts(noremap) },
+  { '<A-Up>',     '<C-w>k',                                                      opts(noremap) },
+  { '<A-q>',      '<C-w>q',                                                      opts(noremap) },
 })
 
 -- Telescope
 nmap({
-  { '<Leader>ff', cmd('Telescope find_files'), opts(noremap) },
-  { '<Leader>fg', cmd('Telescope live_grep'), opts(noremap) },
-  { '<Leader>fb', cmd('Telescope buffers'), opts(noremap) },
-  { '<Leader>fh', cmd('Telescope help_tags'), opts(noremap) },
+  { '<Leader>ff',       cmd('Telescope find_files'),                                    opts(noremap) },
+  { '<Leader>fg',       cmd('Telescope live_grep'),                                     opts(noremap) },
+  { '<Leader>fb',       cmd('Telescope buffers'),                                       opts(noremap) },
+  { '<Leader>fh',       cmd('Telescope help_tags'),                                     opts(noremap) },
   { '<Leader><Leader>', cmd('lua require("telescope").extensions.recent_files.pick()'), opts(noremap, silent) },
 })
 
 -- vgit setting
 nmap({
-  { '<C-k>', cmd("lua require('vgit').hunk_up()"), opts(noremap) },
-  { '<C-j>', cmd("lua require('vgit').hunk_down()"), opts(noremap) },
-  { '<Leader>gs', cmd("lua require('vgit').buffer_hunk_stage()"), opts(noremap) },
-  { '<Leader>gr', cmd("lua require('vgit').buffer_hunk_reset()"), opts(noremap) },
-  { '<Leader>gp', cmd("lua require('vgit').buffer_hunk_preview()"), opts(noremap) },
-  { '<Leader>gb', cmd("lua require('vgit').buffer_blame_preview()"), opts(noremap) },
-  { '<Leader>gf', cmd("lua require('vgit').buffer_diff_preview()"), opts(noremap) },
-  { '<Leader>gh', cmd("lua require('vgit').buffer_history_preview()"), opts(noremap) },
-  { '<Leader>gu', cmd("lua require('vgit').buffer_reset()"), opts(noremap) },
-  { '<Leader>gg', cmd("lua require('vgit').buffer_gutter_blame_preview()"), opts(noremap) },
-  { '<Leader>glu', cmd("lua require('vgit').buffer_hunks_preview()"), opts(noremap) },
+  { '<C-k>',       cmd("lua require('vgit').hunk_up()"),                      opts(noremap) },
+  { '<C-j>',       cmd("lua require('vgit').hunk_down()"),                    opts(noremap) },
+  { '<Leader>gs',  cmd("lua require('vgit').buffer_hunk_stage()"),            opts(noremap) },
+  { '<Leader>gr',  cmd("lua require('vgit').buffer_hunk_reset()"),            opts(noremap) },
+  { '<Leader>gp',  cmd("lua require('vgit').buffer_hunk_preview()"),          opts(noremap) },
+  { '<Leader>gb',  cmd("lua require('vgit').buffer_blame_preview()"),         opts(noremap) },
+  { '<Leader>gf',  cmd("lua require('vgit').buffer_diff_preview()"),          opts(noremap) },
+  { '<Leader>gh',  cmd("lua require('vgit').buffer_history_preview()"),       opts(noremap) },
+  { '<Leader>gu',  cmd("lua require('vgit').buffer_reset()"),                 opts(noremap) },
+  { '<Leader>gg',  cmd("lua require('vgit').buffer_gutter_blame_preview()"),  opts(noremap) },
+  { '<Leader>glu', cmd("lua require('vgit').buffer_hunks_preview()"),         opts(noremap) },
   { '<Leader>gls', cmd("lua require('vgit').project_hunks_staged_preview()"), opts(noremap) },
-  { '<Leader>gd', cmd("lua require('vgit').project_diff_preview()"), opts(noremap) },
-  { '<Leader>gq', cmd("lua require('vgit').project_hunks_qf()"), opts(noremap) },
-  { '<Leader>gx', cmd("lua require('vgit').toggle_diff_preference()"), opts(noremap) },
+  { '<Leader>gd',  cmd("lua require('vgit').project_diff_preview()"),         opts(noremap) },
+  { '<Leader>gq',  cmd("lua require('vgit').project_hunks_qf()"),             opts(noremap) },
+  { '<Leader>gx',  cmd("lua require('vgit').toggle_diff_preference()"),       opts(noremap) },
 })
 
 -- barbar keymap
 nmap({
-  { '<A-,>', cmd('BufferPrevious'), opts(noremap, silent) },
-  { '<A-.>', cmd('BufferNext'), opts(noremap, silent) },
-  { '<A-<>', cmd('BufferMovePrevious'), opts(noremap, silent) },
-  { '<A->>', cmd('BufferMoveNext'), opts(noremap, silent) },
+  { '<A-,>',     cmd('BufferPrevious'),            opts(noremap, silent) },
+  { '<A-.>',     cmd('BufferNext'),                opts(noremap, silent) },
+  { '<A-<>',     cmd('BufferMovePrevious'),        opts(noremap, silent) },
+  { '<A->>',     cmd('BufferMoveNext'),            opts(noremap, silent) },
   { '<Space>bb', cmd('BufferOrderByBufferNumber'), opts(noremap, silent) },
-  { '<Space>bd', cmd('BufferOrderByDirectory'), opts(noremap, silent) },
-  { '<Space>bl', cmd('BufferOrderByLanguage'), opts(noremap, silent) },
+  { '<Space>bd', cmd('BufferOrderByDirectory'),    opts(noremap, silent) },
+  { '<Space>bl', cmd('BufferOrderByLanguage'),     opts(noremap, silent) },
   { '<Space>bw', cmd('BufferOrderByWindowNumber'), opts(noremap, silent) },
-  { '<A-c>', cmd('BufferClose'), opts(noremap, silent) },
-  { '<A-p>', cmd('BufferPin'), opts(noremap, silent) },
+  { '<A-c>',     cmd('BufferClose'),               opts(noremap, silent) },
+  { '<A-p>',     cmd('BufferPin'),                 opts(noremap, silent) },
 })
 
 -- lang setting
 nmap({
-  { '<C-]>', cmd('lua vim.lsp.buf.definition()'), opts(noremap, silent) },
-  { 'gh', cmd('RustHoverAction'), opts(noremap, silent) },
-  { 'gc', cmd('RustCodeAction'), opts(noremap, silent) },
-  { 'gD', cmd('lua vim.lsp.buf.implementation()'), opts(noremap, silent) },
-  { '<C-k>', cmd('lua vim.lsp.buf.signature_help()'), opts(noremap, silent) },
-  { '1gD', cmd('lua vim.lsp.buf.type_definition()'), opts(noremap, silent) },
-  { 'gr', cmd('lua vim.lsp.buf.references()'), opts(noremap, silent) },
-  { 'g0', cmd('lua vim.lsp.buf.document_symbol()'), opts(noremap, silent) },
-  { 'gw', cmd('lua vim.lsp.buf.workspace_symbol()'), opts(noremap, silent) },
+  { '<C-]>',      cmd('lua vim.lsp.buf.definition()'),         opts(noremap, silent) },
+  { 'gh',         cmd('RustHoverAction'),                      opts(noremap, silent) },
+  { 'gc',         cmd('RustCodeAction'),                       opts(noremap, silent) },
+  { 'gD',         cmd('lua vim.lsp.buf.implementation()'),     opts(noremap, silent) },
+  { '<C-k>',      cmd('lua vim.lsp.buf.signature_help()'),     opts(noremap, silent) },
+  { '1gD',        cmd('lua vim.lsp.buf.type_definition()'),    opts(noremap, silent) },
+  { 'gr',         cmd('lua vim.lsp.buf.references()'),         opts(noremap, silent) },
+  { 'g0',         cmd('lua vim.lsp.buf.document_symbol()'),    opts(noremap, silent) },
+  { 'gw',         cmd('lua vim.lsp.buf.workspace_symbol()'),   opts(noremap, silent) },
   -- debug
   { '<Leader>bb', cmd('lua require"dap".toggle_breakpoint()'), opts(noremap, silent) },
-  { '<F9>', cmd('lua require"dap".step_into()'), opts(noremap, silent) },
-  { '<F8>', cmd('lua require"dap".step_over()'), opts(noremap, silent) },
-  { '<F10>', cmd('lua require"dap".step_out()'), opts(noremap, silent) },
-  { '<F5>', cmd('lua require"dap".continue()'), opts(noremap, silent) },
-  { '<Leader>dd', cmd('lua require"dapui".toggle()'), opts(noremap, silent) },
+  { '<F9>',       cmd('lua require"dap".step_into()'),         opts(noremap, silent) },
+  { '<F8>',       cmd('lua require"dap".step_over()'),         opts(noremap, silent) },
+  { '<F10>',      cmd('lua require"dap".step_out()'),          opts(noremap, silent) },
+  { '<F5>',       cmd('lua require"dap".continue()'),          opts(noremap, silent) },
+  { '<Leader>dd', cmd('lua require"dapui".toggle()'),          opts(noremap, silent) },
 })
 
 -- commandline remap
