@@ -62,5 +62,5 @@ plugin({
   config = function()
     require('dapui').setup()
   end,
-  requires = { 'mfussenegger/nvim-dap' },
+  requires = { 'mfussenegger/nvim-dap', 'nvim-neotest/nvim-nio' },
 })
