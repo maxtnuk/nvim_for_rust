@@ -25,41 +25,43 @@ tmap({
 nmap({
   -- noremal remap
   -- vertical split
-  { 'vs',         cmd('vsplit'),                                                opts(noremap) },
+  { 'vs',         cmd('vsplit'),                                                 opts(noremap) },
   -- close buffer
-  { '<C-x>k',     cmd('bdelete'),                                               opts(noremap, silent) },
+  { '<C-x>k',     cmd('bdelete'),                                                opts(noremap, silent) },
   -- save
-  { '<C-s>',      cmd('write'),                                                 opts(noremap) },
+  { '<C-s>',      cmd('write'),                                                  opts(noremap) },
   -- yank
-  { 'Y',          'y$',                                                         opts(noremap) },
+  { 'Y',          'y$',                                                          opts(noremap) },
   -- toggle tree
-  { '<F2>',       cmd('NvimTreeToggle'),                                        opts(noremap) },
+  { '<F2>',       cmd('NvimTreeToggle'),                                         opts(noremap) },
   -- spectre
-  { '<Leader>S',  cmd('Spectre open'),                                          opts(noremap) },
-  { '<Leader>sw', cmd('Spectre open_visual {select_word=true}'),                opts(noremap) },
-  { '<Leader>sp', cmd('Spectre open_file_search'),                              opts(noremap) },
+  { '<Leader>S',  cmd('Spectre open'),                                           opts(noremap) },
+  { '<Leader>sw', cmd('Spectre open_visual {select_word=true}'),                 opts(noremap) },
+  { '<Leader>sp', cmd('Spectre open_file_search'),                               opts(noremap) },
   -- comment
-  { '<A-/>',      cmd('CommentToggle'),                                         opts(noremap, silent) },
+  { '<A-/>',      cmd('CommentToggle'),                                          opts(noremap, silent) },
   -- diff view
-  { '<Leader>dh', cmd('DiffviewFileHistory %'),                                 opts(noremap, silent) },
-  { '<Leader>fl', cmd('Flog'),                                                  opts(noremap, silent) },
-  { '<Leader>do', cmd('DiffviewOpen'),                                          opts(noremap, silent) },
-  { '<Leader>dc', cmd('DiffviewClose'),                                         opts(noremap, silent) },
+  { '<Leader>dh', cmd('DiffviewFileHistory %'),                                  opts(noremap, silent) },
+  { '<Leader>fl', cmd('Flog'),                                                   opts(noremap, silent) },
+  { '<Leader>do', cmd('DiffviewOpen'),                                           opts(noremap, silent) },
+  { '<Leader>dc', cmd('DiffviewClose'),                                          opts(noremap, silent) },
   -- terminal
-  { 'tt',         cmd('ToggleTerm size=70 direction="vertical" shell="bash" '), opts(noremap, silent) },
+  { 'tt',         cmd('ToggleTerm size=20 direction="horizontal" shell="zsh" '), opts(noremap, silent) },
   -- buffer jump
-  { ']b',         cmd('bn'),                                                    opts(noremap) },
-  { '[b',         cmd('bp'),                                                    opts(noremap) },
-  { '<Leader>sc', cmd('set spell!'),                                            opts(noremap, silent) },
+  { ']b',         cmd('bn'),                                                     opts(noremap) },
+  { '[b',         cmd('bp'),                                                     opts(noremap) },
+  { '<Leader>sc', cmd('set spell!'),                                             opts(noremap, silent) },
   -- remove trailing white space
-  { '<Leader>t',  cmd('TrimTrailingWhitespace'),                                opts(noremap) },
+  { '<Leader>t',  cmd('TrimTrailingWhitespace'),                                 opts(noremap) },
   -- window jump
-  { '<A-Left>',   '<C-w>h',                                                     opts(noremap) },
-  { '<A-Right>',  '<C-w>l',                                                     opts(noremap) },
-  { '<A-Down>',   '<C-w>j',                                                     opts(noremap) },
-  { '<A-Up>',     '<C-w>k',                                                     opts(noremap) },
-  { '<A-q>',      '<C-w>q',                                                     opts(noremap) },
-  { '<F3>',       cmd('KeySeer'),                                               opts(noremap) },
+  { '<A-Left>',   '<C-w>h',                                                      opts(noremap) },
+  { '<A-Right>',  '<C-w>l',                                                      opts(noremap) },
+  { '<A-Down>',   '<C-w>j',                                                      opts(noremap) },
+  { '<A-Up>',     '<C-w>k',                                                      opts(noremap) },
+  { '<A-q>',      '<C-w>q',                                                      opts(noremap) },
+  { '<F3>',       cmd('KeySeer'),                                                opts(noremap) },
+  -- quite all
+  { 'qq',         cmd('qa'),                                                     opts(noremap) },
 })
 
 -- Telescope
