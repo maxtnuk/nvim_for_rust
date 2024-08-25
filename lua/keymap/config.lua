@@ -65,7 +65,7 @@ nmap({
   { '<Leader>fg',       cmd('Telescope live_grep'),                                     opts(noremap) },
   { '<Leader>fb',       cmd('Telescope buffers'),                                       opts(noremap) },
   { '<Leader>fh',       cmd('Telescope help_tags'),                                     opts(noremap) },
-  { '<Leader><Leader>', cmd('lua require("telescope").extensions.recent_files.pick()'), opts(noremap, silent) },
+  { '<Leader><Leader>', cmd('Telescope recent_files pick'), opts(noremap, silent) },
 })
 
 -- vgit setting
