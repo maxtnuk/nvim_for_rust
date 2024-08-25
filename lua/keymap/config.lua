@@ -24,6 +24,8 @@ tmap({
 
 nmap({
   -- noremal remap
+  -- vertical split
+  { 'vs',         cmd('vsplit'),                                                opts(noremap) },
   -- close buffer
   { '<C-x>k',     cmd('bdelete'),                                               opts(noremap, silent) },
   -- save
