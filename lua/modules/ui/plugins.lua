@@ -86,3 +86,18 @@ plugin({
 })
 
 plugin({ 'akinsho/nvim-bufferline.lua', config = conf.nvim_bufferline, requires = 'kyazdani42/nvim-web-devicons' })
+
+plugin({
+  'jokajak/keyseer.nvim',
+  config = function()
+    require('keyseer').setup()
+  end,
+})
+
+plugin({
+  'tris203/hawtkeys.nvim',
+  requires = {
+    'nvim-lua/plenary.nvim',
+    'nvim-treesitter/nvim-treesitter',
+  },
+})

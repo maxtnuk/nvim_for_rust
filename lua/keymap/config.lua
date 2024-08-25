@@ -25,66 +25,67 @@ tmap({
 nmap({
   -- noremal remap
   -- close buffer
-  { '<C-x>k',     cmd('bdelete'),                                                opts(noremap, silent) },
+  { '<C-x>k',     cmd('bdelete'),                                               opts(noremap, silent) },
   -- save
-  { '<C-s>',      cmd('write'),                                                  opts(noremap) },
+  { '<C-s>',      cmd('write'),                                                 opts(noremap) },
   -- yank
-  { 'Y',          'y$',                                                          opts(noremap) },
+  { 'Y',          'y$',                                                         opts(noremap) },
   -- toggle tree
-  { '<F2>',       cmd('NvimTreeToggle'),                                         opts(noremap) },
+  { '<F2>',       cmd('NvimTreeToggle'),                                        opts(noremap) },
   -- spectre
-  { '<Leader>S',  cmd('lua require("spectre").open()'),                          opts(noremap) },
-  { '<Leader>sw', cmd('lua require("spectre").open_visual({select_word=true})'), opts(noremap) },
-  { '<Leader>sp', cmd('lua require("spectre").open_file_search()'),              opts(noremap) },
+  { '<Leader>S',  cmd('Spectre open'),                                          opts(noremap) },
+  { '<Leader>sw', cmd('Spectre open_visual {select_word=true}'),                opts(noremap) },
+  { '<Leader>sp', cmd('Spectre open_file_search'),                              opts(noremap) },
   -- comment
-  { '<A-/>',      cmd('CommentToggle'),                                          opts(noremap, silent) },
+  { '<A-/>',      cmd('CommentToggle'),                                         opts(noremap, silent) },
   -- diff view
-  { '<Leader>dh', cmd('DiffviewFileHistory %'),                                  opts(noremap, silent) },
-  { '<Leader>fl', cmd('Flog'),                                                   opts(noremap, silent) },
-  { '<Leader>do', cmd('DiffviewOpen'),                                           opts(noremap, silent) },
-  { '<Leader>dc', cmd('DiffviewClose'),                                          opts(noremap, silent) },
+  { '<Leader>dh', cmd('DiffviewFileHistory %'),                                 opts(noremap, silent) },
+  { '<Leader>fl', cmd('Flog'),                                                  opts(noremap, silent) },
+  { '<Leader>do', cmd('DiffviewOpen'),                                          opts(noremap, silent) },
+  { '<Leader>dc', cmd('DiffviewClose'),                                         opts(noremap, silent) },
   -- terminal
-  { 'tt',         cmd('ToggleTerm size=70 direction="vertical" shell="bash" '),  opts(noremap, silent) },
+  { 'tt',         cmd('ToggleTerm size=70 direction="vertical" shell="bash" '), opts(noremap, silent) },
   -- buffer jump
-  { ']b',         cmd('bn'),                                                     opts(noremap) },
-  { '[b',         cmd('bp'),                                                     opts(noremap) },
-  { '<Leader>sc', cmd('set spell!'),                                             opts(noremap, silent) },
+  { ']b',         cmd('bn'),                                                    opts(noremap) },
+  { '[b',         cmd('bp'),                                                    opts(noremap) },
+  { '<Leader>sc', cmd('set spell!'),                                            opts(noremap, silent) },
   -- remove trailing white space
-  { '<Leader>t',  cmd('TrimTrailingWhitespace'),                                 opts(noremap) },
+  { '<Leader>t',  cmd('TrimTrailingWhitespace'),                                opts(noremap) },
   -- window jump
-  { '<A-Left>',   '<C-w>h',                                                      opts(noremap) },
-  { '<A-Right>',  '<C-w>l',                                                      opts(noremap) },
-  { '<A-Down>',   '<C-w>j',                                                      opts(noremap) },
-  { '<A-Up>',     '<C-w>k',                                                      opts(noremap) },
-  { '<A-q>',      '<C-w>q',                                                      opts(noremap) },
+  { '<A-Left>',   '<C-w>h',                                                     opts(noremap) },
+  { '<A-Right>',  '<C-w>l',                                                     opts(noremap) },
+  { '<A-Down>',   '<C-w>j',                                                     opts(noremap) },
+  { '<A-Up>',     '<C-w>k',                                                     opts(noremap) },
+  { '<A-q>',      '<C-w>q',                                                     opts(noremap) },
+  { '<F3>',       cmd('KeySeer'),                                               opts(noremap) },
 })
 
 -- Telescope
 nmap({
-  { '<Leader>ff',       cmd('Telescope find_files'),                                    opts(noremap) },
-  { '<Leader>fg',       cmd('Telescope live_grep'),                                     opts(noremap) },
-  { '<Leader>fb',       cmd('Telescope buffers'),                                       opts(noremap) },
-  { '<Leader>fh',       cmd('Telescope help_tags'),                                     opts(noremap) },
+  { '<Leader>ff',       cmd('Telescope find_files'),        opts(noremap) },
+  { '<Leader>fg',       cmd('Telescope live_grep'),         opts(noremap) },
+  { '<Leader>fb',       cmd('Telescope buffers'),           opts(noremap) },
+  { '<Leader>fh',       cmd('Telescope help_tags'),         opts(noremap) },
   { '<Leader><Leader>', cmd('Telescope recent_files pick'), opts(noremap, silent) },
 })
 
--- vgit setting
+-- VGit setting
 nmap({
-  { '<C-k>',       cmd("lua require('vgit').hunk_up()"),                      opts(noremap) },
-  { '<C-j>',       cmd("lua require('vgit').hunk_down()"),                    opts(noremap) },
-  { '<Leader>gs',  cmd("lua require('vgit').buffer_hunk_stage()"),            opts(noremap) },
-  { '<Leader>gr',  cmd("lua require('vgit').buffer_hunk_reset()"),            opts(noremap) },
-  { '<Leader>gp',  cmd("lua require('vgit').buffer_hunk_preview()"),          opts(noremap) },
-  { '<Leader>gb',  cmd("lua require('vgit').buffer_blame_preview()"),         opts(noremap) },
-  { '<Leader>gf',  cmd("lua require('vgit').buffer_diff_preview()"),          opts(noremap) },
-  { '<Leader>gh',  cmd("lua require('vgit').buffer_history_preview()"),       opts(noremap) },
-  { '<Leader>gu',  cmd("lua require('vgit').buffer_reset()"),                 opts(noremap) },
-  { '<Leader>gg',  cmd("lua require('vgit').buffer_gutter_blame_preview()"),  opts(noremap) },
-  { '<Leader>glu', cmd("lua require('vgit').buffer_hunks_preview()"),         opts(noremap) },
-  { '<Leader>gls', cmd("lua require('vgit').project_hunks_staged_preview()"), opts(noremap) },
-  { '<Leader>gd',  cmd("lua require('vgit').project_diff_preview()"),         opts(noremap) },
-  { '<Leader>gq',  cmd("lua require('vgit').project_hunks_qf()"),             opts(noremap) },
-  { '<Leader>gx',  cmd("lua require('vgit').toggle_diff_preference()"),       opts(noremap) },
+  { '<C-k>',       cmd("VGit hunk_up"),                      opts(noremap) },
+  { '<C-j>',       cmd("VGit hunk_down"),                    opts(noremap) },
+  { '<Leader>gs',  cmd("VGit buffer_hunk_stage"),            opts(noremap) },
+  { '<Leader>gr',  cmd("VGit buffer_hunk_reset"),            opts(noremap) },
+  { '<Leader>gp',  cmd("VGit buffer_hunk_preview"),          opts(noremap) },
+  { '<Leader>gb',  cmd("VGit buffer_blame_preview"),         opts(noremap) },
+  { '<Leader>gf',  cmd("VGit buffer_diff_preview"),          opts(noremap) },
+  { '<Leader>gh',  cmd("VGit buffer_history_preview"),       opts(noremap) },
+  { '<Leader>gu',  cmd("VGit buffer_reset"),                 opts(noremap) },
+  { '<Leader>gg',  cmd("VGit buffer_gutter_blame_preview"),  opts(noremap) },
+  { '<Leader>glu', cmd("VGit buffer_hunks_preview"),         opts(noremap) },
+  { '<Leader>gls', cmd("VGit project_hunks_staged_preview"), opts(noremap) },
+  { '<Leader>gd',  cmd("VGit project_diff_preview"),         opts(noremap) },
+  { '<Leader>gq',  cmd("VGit project_hunks_qf"),             opts(noremap) },
+  { '<Leader>gx',  cmd("VGit toggle_diff_preference"),       opts(noremap) },
 })
 
 -- barbar keymap
