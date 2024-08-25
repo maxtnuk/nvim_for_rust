@@ -64,3 +64,8 @@ plugin({
   end,
   requires = { 'mfussenegger/nvim-dap', 'nvim-neotest/nvim-nio' },
 })
+
+plugin({
+  'stevearc/conform.nvim',
+  config = conf.conform,
+})
