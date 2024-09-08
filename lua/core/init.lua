@@ -8,8 +8,13 @@ local cache_dir = home .. '/.cache/nvim/'
 
 -- Create cache dir and subs dir
 local createdir = function()
-    local data_dir = {cache_dir .. 'backup', cache_dir .. 'session', cache_dir .. 'swap', cache_dir .. 'tags',
-                      cache_dir .. 'undo'}
+    local data_dir = {
+        cache_dir .. 'backup',
+        cache_dir .. 'session',
+        cache_dir .. 'swap',
+        cache_dir .. 'tags',
+        cache_dir .. 'undo',
+    }
     -- There only check once that If cache_dir exists
     -- Then I don't want to check subs dir exists
     if vim.fn.isdirectory(cache_dir) == 0 then
@@ -44,12 +49,8 @@ vim.g.loaded_netrwPlugin = 1
 vim.g.loaded_netrwSettings = 1
 vim.g.loaded_netrwFileHandlers = 1
 
-local lazy = require('core.lazy')
-lazy.load()
-lazy.setup()
-
 local rock = require('core.rocks')
 rock.init()
 
 require('core.options')
--- require('keymap')
+require('keymap')

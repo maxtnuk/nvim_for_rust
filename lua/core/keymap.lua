@@ -1,7 +1,6 @@
 -- author: glepnr https://github.com/glepnir
 -- date: 2022-07-02
 -- License: MIT
-
 local keymap = {}
 local opts = {}
 
@@ -77,7 +76,7 @@ function keymap.cu(str)
     return '<C-u><cmd>' .. str .. '<CR>'
 end
 
---@private
+-- @private
 local keymap_set = function(mode, tbl)
     vim.validate({
         tbl = { tbl, 'table' },
