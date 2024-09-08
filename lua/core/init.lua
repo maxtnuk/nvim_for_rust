@@ -1,7 +1,6 @@
 -- author: glepnr https://github.com/glepnir
 -- date: 2022-07-02
 -- License: MIT
-
 local vim = vim
 local home = os.getenv('HOME')
 -- remove check is windows because I only use mac or linux
@@ -9,13 +8,8 @@ local cache_dir = home .. '/.cache/nvim/'
 
 -- Create cache dir and subs dir
 local createdir = function()
-    local data_dir = {
-        cache_dir .. 'backup',
-        cache_dir .. 'session',
-        cache_dir .. 'swap',
-        cache_dir .. 'tags',
-        cache_dir .. 'undo',
-    }
+    local data_dir = {cache_dir .. 'backup', cache_dir .. 'session', cache_dir .. 'swap', cache_dir .. 'tags',
+                      cache_dir .. 'undo'}
     -- There only check once that If cache_dir exists
     -- Then I don't want to check subs dir exists
     if vim.fn.isdirectory(cache_dir) == 0 then
@@ -30,7 +24,7 @@ end
 
 createdir()
 
---disable_distribution_plugins
+-- disable_distribution_plugins
 vim.g.loaded_gzip = 1
 vim.g.loaded_tar = 1
 vim.g.loaded_tarPlugin = 1
@@ -58,4 +52,4 @@ local rock = require('core.rocks')
 rock.init()
 
 require('core.options')
-require('keymap')
+-- require('keymap')
