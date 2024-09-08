@@ -9,23 +9,23 @@ local cache_dir = home .. '/.cache/nvim/'
 
 -- Create cache dir and subs dir
 local createdir = function()
-  local data_dir = {
-    cache_dir .. 'backup',
-    cache_dir .. 'session',
-    cache_dir .. 'swap',
-    cache_dir .. 'tags',
-    cache_dir .. 'undo',
-  }
-  -- There only check once that If cache_dir exists
-  -- Then I don't want to check subs dir exists
-  if vim.fn.isdirectory(cache_dir) == 0 then
-    os.execute('mkdir -p ' .. cache_dir)
-    for _, v in pairs(data_dir) do
-      if vim.fn.isdirectory(v) == 0 then
-        os.execute('mkdir -p ' .. v)
-      end
+    local data_dir = {
+        cache_dir .. 'backup',
+        cache_dir .. 'session',
+        cache_dir .. 'swap',
+        cache_dir .. 'tags',
+        cache_dir .. 'undo',
+    }
+    -- There only check once that If cache_dir exists
+    -- Then I don't want to check subs dir exists
+    if vim.fn.isdirectory(cache_dir) == 0 then
+        os.execute('mkdir -p ' .. cache_dir)
+        for _, v in pairs(data_dir) do
+            if vim.fn.isdirectory(v) == 0 then
+                os.execute('mkdir -p ' .. v)
+            end
+        end
     end
-  end
 end
 
 createdir()
@@ -50,9 +50,12 @@ vim.g.loaded_netrwPlugin = 1
 vim.g.loaded_netrwSettings = 1
 vim.g.loaded_netrwFileHandlers = 1
 
-local pack = require('core.pack')
+local lazy = require('core.lazy')
+lazy.load()
+lazy.setup()
 
-pack.ensure_plugins()
+local rock = require('core.rocks')
+rock.init()
+
 require('core.options')
-pack.load_compile()
 require('keymap')

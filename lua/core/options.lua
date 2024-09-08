@@ -29,8 +29,8 @@ opt.infercase = true
 
 -- use rg in vim grep
 if vim.fn.executable('rg') == 1 then
-  opt.grepformat = '%f:%l:%c:%m,%f:%l:%m'
-  opt.grepprg = 'rg --vimgrep --no-heading --smart-case'
+    opt.grepformat = '%f:%l:%c:%m,%f:%l:%m'
+    opt.grepprg = 'rg --vimgrep --no-heading --smart-case'
 end
 
 opt.mouse = 'i'
@@ -80,23 +80,23 @@ opt.colorcolumn = '100'
 -- opt.concealcursor = 'niv'
 
 vim.api.nvim_create_autocmd({ 'BufEnter', 'CursorHold', 'CursorHoldI', 'FocusGained' }, {
-  command = "if mode() != 'c' | checktime | endif",
-  pattern = { '*' },
+    command = "if mode() != 'c' | checktime | endif",
+    pattern = { '*' },
 })
 
 if vim.loop.os_uname().sysname == 'Darwin' then
-  vim.g.clipboard = {
-    name = 'macOS-clipboard',
-    copy = {
-      ['+'] = 'pbcopy',
-      ['*'] = 'pbcopy',
-    },
-    paste = {
-      ['+'] = 'pbpaste',
-      ['*'] = 'pbpaste',
-    },
-    cache_enabled = 0,
-  }
-  vim.g.python_host_prog = '/usr/bin/python'
-  vim.g.python3_host_prog = '/usr/local/bin/python3'
+    vim.g.clipboard = {
+        name = 'macOS-clipboard',
+        copy = {
+            ['+'] = 'pbcopy',
+            ['*'] = 'pbcopy',
+        },
+        paste = {
+            ['+'] = 'pbpaste',
+            ['*'] = 'pbpaste',
+        },
+        cache_enabled = 0,
+    }
+    vim.g.python_host_prog = '/usr/bin/python'
+    vim.g.python3_host_prog = '/usr/local/bin/python3'
 end

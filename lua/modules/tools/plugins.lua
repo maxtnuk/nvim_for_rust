@@ -6,74 +6,74 @@ local plugin = require('core.pack').register_plugin
 local conf = require('modules.tools.config')
 
 plugin({
-  'nvim-telescope/telescope.nvim',
-  cmd = 'Telescope',
-  config = conf.telescope,
-  requires = {
-    { 'nvim-lua/plenary.nvim', opt = true },
-    { 'nvim-telescope/telescope-fzf-native.nvim' },
-    { 'smartpde/telescope-recent-files' },
-  },
+    'nvim-telescope/telescope.nvim',
+    cmd = 'Telescope',
+    config = conf.telescope,
+    requires = {
+        { 'nvim-lua/plenary.nvim', opt = true },
+        { 'nvim-telescope/telescope-fzf-native.nvim' },
+        { 'smartpde/telescope-recent-files' },
+    },
 })
 
 plugin({
-  'nvim-telescope/telescope-fzf-native.nvim',
-  run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build',
-  --   -- requires = { 'nvim-telescope/telescope.nvim' },
+    'nvim-telescope/telescope-fzf-native.nvim',
+    run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build',
+    --   -- requires = { 'nvim-telescope/telescope.nvim' },
 })
 
 plugin({
-  'smartpde/telescope-recent-files',
-  -- after = 'telescope.nvim',
-  -- requires = { 'nvim-telescope/telescope.nvim' },
+    'smartpde/telescope-recent-files',
+    -- after = 'telescope.nvim',
+    -- requires = { 'nvim-telescope/telescope.nvim' },
 })
 
 plugin({
-  'romgrk/barbar.nvim',
-  requires = { 'kyazdani42/nvim-web-devicons' },
+    'romgrk/barbar.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons' },
 })
 
 plugin({
-  'akinsho/toggleterm.nvim',
-  tag = '*',
-  config = conf.toggleterm,
+    'akinsho/toggleterm.nvim',
+    tag = '*',
+    config = conf.toggleterm,
 })
 
 plugin({
-  'sychen52/smart-term-esc.nvim',
-  config = conf.smart_term_esc,
+    'sychen52/smart-term-esc.nvim',
+    config = conf.smart_term_esc,
 })
 
 plugin({
-  'ellisonleao/dotenv.nvim',
-  config = function()
-    require('dotenv').setup({
-      enable_on_load = false,
-    })
-  end,
+    'ellisonleao/dotenv.nvim',
+    config = function()
+        require('dotenv').setup({
+            enable_on_load = false,
+        })
+    end,
 })
 
 plugin({
-  'tanvirtin/vgit.nvim',
-  config = function()
-    require('vgit').setup()
-  end,
-  requires = {
-    'nvim-lua/plenary.nvim',
-  },
+    'tanvirtin/vgit.nvim',
+    config = function()
+        require('vgit').setup()
+    end,
+    requires = {
+        'nvim-lua/plenary.nvim',
+    },
 })
 
 plugin({
-  'windwp/nvim-spectre',
+    'windwp/nvim-spectre',
 })
 
 plugin({
-  'kdheepak/lazygit.nvim',
+    'kdheepak/lazygit.nvim',
 })
 
 plugin({ 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' })
 
 plugin({
-  'rbong/vim-flog',
-  requires = { 'tpope/vim-fugitive' },
+    'rbong/vim-flog',
+    requires = { 'tpope/vim-fugitive' },
 })
