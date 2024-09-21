@@ -18,9 +18,7 @@ vim.g.mapleader = ','
 nmap({ ',', '', opts(noremap) })
 xmap({ ',', '', opts(noremap) })
 
-tmap({
-  { '<Esc>', '<C-\\><C-n>', opts(noremap) },
-})
+tmap({ '<Esc>', '<C-\\><C-n>', opts(noremap) })
 
 nmap({
   -- noremal remap
