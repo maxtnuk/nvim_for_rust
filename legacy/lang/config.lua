@@ -1,53 +1,5 @@
 local config = {}
 
-function config.nvim_treesitter()
-    require('nvim-treesitter.configs').setup({
-        ensure_installed = { 'rust', 'lua', 'toml' },
-        auto_install = true,
-        ignore_install = { 'phpdoc' },
-        highlight = {
-            enable = true,
-        },
-        ident = { enable = true },
-        rainbow = {
-            enable = true,
-            extended_mode = true,
-            max_file_lines = nil,
-        },
-        textobjects = {
-            select = {
-                enable = true,
-                keymaps = {
-                    ['af'] = '@function.outer',
-                    ['if'] = '@function.inner',
-                    ['ac'] = '@class.outer',
-                    ['ic'] = '@class.inner',
-                },
-            },
-        },
-    })
-end
-
-function config.mason()
-    require('mason').setup()
-end
-
-function config.mason_lspconf()
-    require('mason-lspconfig').setup()
-end
-function config.dap()
-    local dap, dapui = require('dap'), require('dapui')
-    dap.listeners.after.event_initialized['dapui_config'] = function()
-        dapui.open()
-    end
-    dap.listeners.before.event_terminated['dapui_config'] = function()
-        dapui.close()
-    end
-    dap.listeners.before.event_exited['dapui_config'] = function()
-        dapui.close()
-    end
-end
-
 function config.rust_tools()
     local mason_path = vim.env.HOME .. '/.local/share/nvim/mason/'
     local codelldb_path = mason_path .. 'packages/codelldb/extension/adapter/codelldb'
@@ -168,23 +120,6 @@ function config.rust_tools()
         },
         dap = {
             adapter = require('rust-tools.dap').get_codelldb_adapter(codelldb_path, liblldb_path),
-        },
-    })
-end
-
-function config.conform()
-    require('conform').setup({
-        format_on_save = {
-            -- These options will be passed to conform.format()
-            timeout_ms = 500,
-            lsp_format = 'fallback',
-        },
-        formatters_by_ft = {
-            lua = { 'stylua' },
-            -- Conform will run multiple formatters sequentially
-            python = { 'isort', 'black' },
-            -- You can customize some of the format options for the filetype (:help conform.format)
-            rust = { 'rustfmt', lsp_format = 'fallback' },
         },
     })
 end

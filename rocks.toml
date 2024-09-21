@@ -42,3 +42,29 @@ nvim-spectre = "scm"
 [config]
 plugins_dir = "modules/"
 auto_setup = false
+
+# language section
+[plugins.nvim.treesitter]
+config = "modules/lang/nvim_treesitter"
+[bundles.nvim.dap]
+items = ["nvim-dap", "nvim-dap-ui"]
+config = "modules/lang/nvim_dap"
+[plugins.conform.nvim]
+config = "modules/lang/conform"
+
+# completion section
+[plugins.nvim.cmp]
+config = "modules/completion/nvim_cmp"
+
+# tools section
+[plugins.telescope.nvim]
+config = "modules/tools/telescope"
+[plugins.toggleterm.nvim.config]
+options = { shell = "bash" }
+
+# ui section
+[plugins.nvim-tree.lua]
+config = "modules/ui/nvim_tree"
+
+
+
